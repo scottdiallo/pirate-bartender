@@ -13,13 +13,16 @@ var Drink = function(pantry, drinkOrder) {
     // then pull random pantry inredient for that prop if true
     // but IGNORE that type ingredient if false,
         var ingredientNumber,
-        ingredientsArray = [];
+            ingredientsArray = [];
+
 for (var drinkIngredient in drinkOrder) {
     if (drinkIngredient) { // if type is true
         ingredientNumber = Math.floor(Math.random() * 2);
-        $('main').append(pantry[drinkIngredient][ingredientNumber]);
+        ingredientsArray.push(pantry[drinkIngredient][ingredientNumber]);
         }
     }
+    return ingredientsArray;
+
 };
 
 $(document).ready(function() {
@@ -44,5 +47,6 @@ $(document).ready(function() {
 
         drinkOrder = new Order(orderValues);
         customerBeverage = new Drink(pantry, drinkOrder);
+        console.log(customerBeverage);
     });
 });
