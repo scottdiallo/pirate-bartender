@@ -8,32 +8,34 @@ var Order = function(orderValues) {
 };
 
 var Drink = function(pantry, drinkOrder) {
-    // Will build the drink from the Order.
-    // test if true for each drink property
-    // then pull random pantry inredient for that prop if true
-    // but IGNORE that type ingredient if false,
-        var ingredientNumber,
-            ingredientsArray = [];
+    var ingredientNumber,
+        ingredientsArray = [];
 
-for (var drinkIngredient in drinkOrder) {
-    if (drinkIngredient) { // if type is true
-        ingredientNumber = Math.floor(Math.random() * 2);
-        ingredientsArray.push(pantry[drinkIngredient][ingredientNumber]);
+    for (var drinkIngredient in drinkOrder) {
+        if (drinkIngredient) {
+            ingredientNumber = Math.floor(Math.random() * 2);
+            ingredientsArray.push(pantry[drinkIngredient][ingredientNumber]);
         }
     }
     return ingredientsArray;
 
 };
 
-$(document).ready(function() {
-    var pantry = {
-        strong: ["rum", "whiskey", "gin"],
-        salty: ["olive", "salt rim", "bacon"],
-        bitter: ["bitters", "tonic", "lemon peel"],
-        sweet: ["cola", "agave", "honey"],
-        fruity: ["orange slice", "cassis", "cherry"]
+var drinkNamer = function(concoction){
+    // use if statements to piece together name conditionally
+    // based on the ingredts that comprise it
+}
 
-    };
+$(document).ready(function() {
+    var concoction,
+        pantry = {
+            strong: ["rum", "whiskey", "gin"],
+            salty: ["olive", "salt rim", "bacon"],
+            bitter: ["bitters", "tonic", "lemon peel"],
+            sweet: ["cola", "agave", "honey"],
+            fruity: ["orange slice", "cassis", "cherry"]
+
+        };
 
     $('form').on('submit', function(e) {
         orderValues = [];
@@ -45,8 +47,8 @@ $(document).ready(function() {
             orderValues.push($(this).val() === 'yes' ? true : false);
         });
 
-        drinkOrder = new Order(orderValues);
-        customerBeverage = new Drink(pantry, drinkOrder);
-        console.log(customerBeverage);
+        drinkOrder = new Order(orderValues); // create new order from DOM
+        concoction = new Drink(pantry, drinkOrder); // mix drink with Drink constructor
+        customerBeverage = drinkNamer(concoction); // name the customer's beverage with drinkNamer();
     });
 });
