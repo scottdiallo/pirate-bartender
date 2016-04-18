@@ -1,10 +1,10 @@
-var Order = function(isStrong, isSalty, isBitter, isSweet, isFruity) {
+var Order = function(orderValues) {
     // Pulls values from the DOM.
-    this.isStrong = isStrong;
-    this.isSalty = isSalty;
-    this.isBitter = isBitter;
-    this.isSweet = isSweet;
-    this.isFruity = isFruity;
+    this.isStrong = orderValues[0];
+    this.isSalty = orderValues[1];
+    this.isBitter = orderValues[2];
+    this.isSweet = orderValues[3];
+    this.isFruity = orderValues[4];
 };
 
 var Drink = function(orderObject) {
@@ -21,12 +21,17 @@ $(document).ready(function() {
 
     };
 
-    $('form').on('submit', function(e){
+    $('form').on('submit', function(e) {
+        orderValues = [];
         e.preventDefault();
-        var isStrong = $('.isDrinkStrong').val(),
-            isSalty = $('.isDrinkSalty').val(),
-            isBitter = $('.isDrinkBitter').val(),
-            isSweet = $('.isDrinkSweet').val(),
-            isFruity = $('.isDrinkFruity').val();
+
+        $('select').each(function() {
+            // pushes DOM values to array,
+            //uses ternary to convert them to boolean true or false
+            orderValues.push($(this).val() === 'yes' ? true : false);
+        });
+
+        // drinkOrder = new Order(orderValues);
+        //customerBeverage = new Drink(drinkOrder);
     });
 });
