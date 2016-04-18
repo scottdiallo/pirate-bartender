@@ -1,23 +1,44 @@
 var Order = function(orderValues) {
     // Pulls values from the DOM.
-    this.isStrong = orderValues[0];
-    this.isSalty = orderValues[1];
-    this.isBitter = orderValues[2];
-    this.isSweet = orderValues[3];
-    this.isFruity = orderValues[4];
+    this.strong = orderValues[0];
+    this.salty = orderValues[1];
+    this.bitter = orderValues[2];
+    this.sweet = orderValues[3];
+    this.fruity = orderValues[4];
 };
 
-var Drink = function(orderObject) {
-    // Will build the drink from the Order
+var Drink = function(pantry, drinkOrder) {
+    // Will build the drink from the Order.
+    // test if true for each drink property
+    // then pull random pantry inredient for that prop if true
+    // but IGNORE that type ingredient if false,
+        var ingredientNumber,
+        ingredientsArray = [];
+for (var drinkIngredient in drinkOrder) {
+    if (drinkIngredient) { // if type is true
+        ingredientNumber = 0; // Math.floor(Math.random() * 2);
+        console.log(drinkIngredient);
+
+// isStrong  --> strong poretpry of pantry
+
+
+
+        }
+    }
+    // for (var pantryIngredient in pantry) {
+    //    ingredientsArray.push(ingredientCategory[ingredientNumber]);
+    //     console.log(pantryIngredient);
+    // }
+
 };
 
 $(document).ready(function() {
     var pantry = {
-        strongIngredients: ["rum", "whiskey", "gin"],
-        saltyIngredients: ["olive", "salt rim", "bacon"],
-        bitterIngredients: ["bitters", "tonic", "lemon peel"],
-        sweetIngredients: ["cola", "agave", "honey"],
-        fruityIngredients: ["orange slice", "cassis", "cherry"]
+        strong: ["rum", "whiskey", "gin"],
+        salty: ["olive", "salt rim", "bacon"],
+        bitter: ["bitters", "tonic", "lemon peel"],
+        sweet: ["cola", "agave", "honey"],
+        fruity: ["orange slice", "cassis", "cherry"]
 
     };
 
@@ -31,7 +52,7 @@ $(document).ready(function() {
             orderValues.push($(this).val() === 'yes' ? true : false);
         });
 
-        // drinkOrder = new Order(orderValues);
-        //customerBeverage = new Drink(drinkOrder);
+        drinkOrder = new Order(orderValues);
+        customerBeverage = new Drink(pantry, drinkOrder);
     });
 });
