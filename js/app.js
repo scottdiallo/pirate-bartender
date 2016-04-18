@@ -11,10 +11,10 @@ var Drink = function(pantry, drinkOrder) {
     var ingredientNumber,
         ingredientsArray = [];
 
-    for (var drinkIngredient in drinkOrder) {
-        if (drinkIngredient) {
-            ingredientNumber = Math.floor(Math.random() * 2);
-            ingredientsArray.push(pantry[drinkIngredient][ingredientNumber]);
+    for (var userPreference in drinkOrder) {
+        ingredientNumber = Math.floor(Math.random() * 2);
+        if (drinkOrder[userPreference]) {
+            ingredientsArray.push(pantry[userPreference][ingredientNumber]);
         }
     }
     return ingredientsArray;
@@ -34,7 +34,6 @@ $(document).ready(function() {
             bitter: ["bitters", "tonic", "lemon peel"],
             sweet: ["cola", "agave", "honey"],
             fruity: ["orange slice", "cassis", "cherry"]
-
         };
 
     $('form').on('submit', function(e) {
@@ -43,13 +42,12 @@ $(document).ready(function() {
         e.preventDefault();
 
         $('select').each(function() {
-            // pushes DOM values to array,
-            //uses ternary to convert them to boolean true or false
             orderValues.push($(this).val() === 'yes' ? true : false);
         });
 
         drinkOrder = new Order(orderValues); // create new order from DOM
         concoction = new Drink(pantry, drinkOrder); // mix drink with Drink constructor
+        alert(concoction);
         customerBeverage = drinkNamer(concoction); // name the customer's beverage with drinkNamer();
     });
 });
