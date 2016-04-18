@@ -1,5 +1,4 @@
-
-var Order = function(isStrong, isSalty, isBitter, isSweet, isFruity){
+var Order = function(isStrong, isSalty, isBitter, isSweet, isFruity) {
     // Pulls values from the DOM.
     this.isStrong = isStrong;
     this.isSalty = isSalty;
@@ -8,11 +7,11 @@ var Order = function(isStrong, isSalty, isBitter, isSweet, isFruity){
     this.isFruity = isFruity;
 };
 
-var Drink = function(orderObject){
+var Drink = function(orderObject) {
     // Will build the drink from the Order
 };
 
-$(document).ready(function(){
+$(document).ready(function() {
     var pantry = {
         strong: [""],
         salty: [""],
@@ -21,5 +20,4 @@ $(document).ready(function(){
         fruity: [""]
 
     };
-
 });
