@@ -13,11 +13,11 @@ var Drink = function(orderObject) {
 
 $(document).ready(function() {
     var pantry = {
-        strongIngredients: [""],
-        saltyIngredients: [""],
-        bitterIngredients: [""],
-        sweetIngredients: ["Cola", "Agave"],
-        fruityIngredients: [""]
+        strongIngredients: ["rum", "whiskey", "gin"],
+        saltyIngredients: ["olive", "salt rim", "bacon"],
+        bitterIngredients: ["bitters", "tonic", "lemon peel"],
+        sweetIngredients: ["cola", "agave", "honey"],
+        fruityIngredients: ["orange slice", "cassis", "cherry"]
 
     };
 
