@@ -24,7 +24,7 @@ var Drink = function(pantry, drinkOrder) {
 var drinkNamer = function(concoction){
     // use if statements to piece together name conditionally
     // based on the ingredts that comprise it
-}
+};
 
 $(document).ready(function() {
     var concoction,
@@ -39,6 +39,7 @@ $(document).ready(function() {
 
     $('form').on('submit', function(e) {
         orderValues = [];
+        console.log(e);
         e.preventDefault();
 
         $('select').each(function() {
