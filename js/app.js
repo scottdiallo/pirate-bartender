@@ -38,7 +38,6 @@ $(document).ready(function() {
 
     $('form').on('submit', function(e) {
         orderValues = [];
-        console.log(e);
         e.preventDefault();
 
         $('select').each(function() {
