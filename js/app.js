@@ -20,4 +20,13 @@ $(document).ready(function() {
         fruityIngredients: [""]
 
     };
+
+    $('form').on('submit', function(e){
+        e.preventDefault();
+        var isStrong = $('.isDrinkStrong').val(),
+            isSalty = $('.isDrinkSalty').val(),
+            isBitter = $('.isDrinkBitter').val(),
+            isSweet = $('.isDrinkSweet').val(),
+            isFruity = $('.isDrinkFruity').val();
+    });
 });
