@@ -17,7 +17,7 @@ var Drink = function(pantry, drinkOrder) {
 for (var drinkIngredient in drinkOrder) {
     if (drinkIngredient) { // if type is true
         ingredientNumber = Math.floor(Math.random() * 2);
-        console.log(pantry[drinkIngredient][ingredientNumber]);
+        $('main').append(pantry[drinkIngredient][ingredientNumber]);
         }
     }
 };
