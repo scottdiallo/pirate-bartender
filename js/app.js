@@ -13,11 +13,11 @@ var Drink = function(orderObject) {
 
 $(document).ready(function() {
     var pantry = {
-        strong: [""],
-        salty: [""],
-        bitter: [""],
-        sweet: ["Cola", "Agave"],
-        fruity: [""]
+        strongIngredients: [""],
+        saltyIngredients: [""],
+        bitterIngredients: [""],
+        sweetIngredients: ["Cola", "Agave"],
+        fruityIngredients: [""]
 
     };
 });
