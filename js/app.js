@@ -16,20 +16,10 @@ var Drink = function(pantry, drinkOrder) {
         ingredientsArray = [];
 for (var drinkIngredient in drinkOrder) {
     if (drinkIngredient) { // if type is true
-        ingredientNumber = 0; // Math.floor(Math.random() * 2);
-        console.log(drinkIngredient);
-
-// isStrong  --> strong poretpry of pantry
-
-
-
+        ingredientNumber = Math.floor(Math.random() * 2);
+        console.log(pantry[drinkIngredient][ingredientNumber]);
         }
     }
-    // for (var pantryIngredient in pantry) {
-    //    ingredientsArray.push(ingredientCategory[ingredientNumber]);
-    //     console.log(pantryIngredient);
-    // }
-
 };
 
 $(document).ready(function() {
