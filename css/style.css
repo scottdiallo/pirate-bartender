@@ -1,0 +1,41 @@
+form {
+    border: 1px solid white;
+    text-align: center;
+    padding: 8px;
+    height: 612px;
+    width: 600px;
+    margin: 0 auto;
+    font-family: 'BenchNine', sans-serif;
+    font-size: 2.3em;
+    color: black;
+    background-color: antiqueWhite;
+}
+
+select  {
+    font-size: .6em;
+    border-radius: 3px;
+    float: right;
+
+}
+.formGroup{
+    margin-top: 50px;
+}
+
+h1 {
+    background-color: black;
+    border: 1px solie white;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    width: 590px;
+    border-radius: 5px;
+}
+
+.orderBtn {
+    border-radius: 20px;
+    background-color: teal;
+    color: white;
+    font-size: 1em;
+    padding: 8px;
+}
