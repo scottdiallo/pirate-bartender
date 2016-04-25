@@ -1,3 +1,7 @@
+body {
+background-color: #FC0FC0;
+}
+
 form {
     border: 1px solid white;
     text-align: center;
@@ -38,4 +42,5 @@ h1 {
     color: white;
     font-size: 1em;
     padding: 8px;
+    margin-bottom: 15px;
 }
